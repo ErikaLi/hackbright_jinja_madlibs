@@ -2,12 +2,40 @@
 {% block title %}Madlibs!{% endblock %}
 
 {% block content %}
-    <h3>Here is the result</h3>
-    There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
-    When {{ person }} went to pick it up, it burst into flames in a totally
-    {{ adjective }} way.
+
+    {% if animals|length == 0 %}
+        <h3>Here is the result</h3>
+        <p class="animal0">There once was a {{ color }} {{ noun }} sitting in the
+            Hackbright Lab.When {{ person }} went to pick it up, it burst into flames in a totally <a href="https://s-media-cache-ak0.pinimg.com/originals/df/37/4d/df374d101a3ec1dfcf277fbba422c5da.jpg">{{ adjective }}</a> way.</p>
+    {% elif animals|length == 1 %}
+        <h3>Here is the result1</h3>
+        There once was a {{ color }} {{ noun }} sitting on top of {{ animals[0] }}.
+        When {{ person }} went to pick it up, it burst into flames in a totally
+        {{ adjective }} way.
+    {% elif animals|length == 2 %}
+        <h3>Here is the result1</h3>
+        There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
+        When {{ person }} went to pick it up, it burst into flames in a totally
+        {{ adjective }} way.I like {{ animals[0] }} and {{ animals[1] }}.
+    {% elif animals|length == 3 %}
+        <h3>Here is the result1</h3>
+        There once was a {{ color }} {{ animals[0] }} like {{ noun }} looking at
+        {{ animals[1] }}. When {{ person }} went to pick it up, it laughed like
+        {{ animals[2] }} in a totally {{ adjective }} way.
+    {% elif animals|length == 4 %}
+        <h3>Here is the result1</h3>
+        There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
+        When {{ person }} went to pick it up, it burst into flames in a totally
+        {{ adjective }} way. I like {{ animals[0] }}, {{ animals[1] }}, {{ animals[2] }}
+        and {{ animals[3] }}.
+    {% endif %}
+
+
+
+
 
     <br><br>
     <a href="/"><button>Go Back to HomePage</button></a>
 
 {% endblock %}
+

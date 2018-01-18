@@ -33,6 +33,14 @@
 
 
       <div>
+         Pick any number of animal:
+              {% for animal in animals %}
+                <input type="checkbox" name="animal" value="{{ animal }}">{{ animal }}
+              {% endfor %}
+          </inupt>
+      </div>
+
+      <div>
 
         <input type="submit">
       </div>

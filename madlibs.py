@@ -19,6 +19,8 @@ NOUNS = ["Hamburger", "Iphone", "Sunflower", "Lambourgini", "Hackbright"]
 
 ADJECTIVES = ["smart", "brave", "delicious", "expensive", "cool"]
 
+ANIMALS =["cat", "dog", "polar bear", "koala"]
+
 
 @app.route('/')
 def start_here():
@@ -59,7 +61,7 @@ def show_madlib_form():
     if user_choice == "no":
         return render_template("goodbye.html", person=player)
     else:
-        return render_template("game.html", noun_list=NOUNS, adj=ADJECTIVES)
+        return render_template("game.html", noun_list=NOUNS, adj=ADJECTIVES, animals=ANIMALS)
 
 
 @app.route('/madlib')
@@ -70,8 +72,10 @@ def show_madlib():
     person = request.args.get("person")
     noun = request.args.get("noun")
     adjective = request.args.get("adjective")
+    animals = request.args.getlist("animal")
+
     return render_template('madlib.html', color=color, noun=noun, person=person,
-                           adjective=adjective)
+                          adjective=adjective, animals=animals)
 
 
 if __name__ == '__main__':
