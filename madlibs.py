@@ -51,6 +51,8 @@ def greet_person():
 
 @app.route('/game')
 def show_madlib_form():
+    """Ask User Choice"""
+
     user_choice = request.args.get("play_game")
     player = request.args.get("person")
 
@@ -62,12 +64,14 @@ def show_madlib_form():
 
 @app.route('/madlib')
 def show_madlib():
+    """Renders the funny result"""
+
     color = request.args.get("color")
     person = request.args.get("person")
     noun = request.args.get("noun")
     adjective = request.args.get("adjective")
     return render_template('madlib.html', color=color, noun=noun, person=person,
-        adjective=adjective)
+                           adjective=adjective)
 
 
 if __name__ == '__main__':
