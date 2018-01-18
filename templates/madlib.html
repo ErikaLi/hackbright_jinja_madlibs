@@ -1,19 +1,13 @@
-<!doctype html>
-<html>
-<head>
-  <title>Madlibs</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Madlibs!{% endblock %}
 
-<h3>Here is the result</h3>
-There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
-When {{ person }} went to pick it up, it burst into flames in a totally
-{{ adjective }} way.
+{% block content %}
+    <h3>Here is the result</h3>
+    There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
+    When {{ person }} went to pick it up, it burst into flames in a totally
+    {{ adjective }} way.
 
-<br><br>
-<a href="/"><button>Go Back to HomePage</button></a>
+    <br><br>
+    <a href="/"><button>Go Back to HomePage</button></a>
 
-
-
-</body>
-</html>
+{% endblock %}
