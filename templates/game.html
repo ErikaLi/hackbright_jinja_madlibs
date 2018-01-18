@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <title>Game</title>
+  <style>
+        div{
+            margin :25px;
+        }
+  </style>
+</head>
+<body>
+
+
+<form action="/madlib">
+
+  <div>
+      Give a name: <input type="text" name="person">
+  </div>
+
+  <div>
+      Give a color: <input type="text" name="color">
+  </div>
+
+  <div>
+
+      Pick a Noun:
+      <select name="noun">
+         {% for noun in noun_list %}
+             <option value="{{ noun }}">{{ noun }}</option>
+          {% endfor %}
+      </select>
+  </div>
+
+  <div>
+     Pick an adjective:
+      <select name="adjective">
+         {% for ad in adj %}
+             <option value="{{ ad }}">{{ ad }}</option>
+          {% endfor %}
+      </select>
+  </div>
+
+
+  <div>
+
+    <input type="submit">
+  </div>
+
+</form>
+
+</body>
+</html>
